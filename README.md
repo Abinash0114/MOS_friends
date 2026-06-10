@@ -26,17 +26,7 @@ This project implements a Gm-C realization of the classic KHN state-variable biq
 
 The KHN biquad filter architecture consists of two cascading analog integrators and a summing/gain stage configured in a feedback loop.
 
-```
-Input ----> [ Summing Node ] ----> Highpass Output (HP)
-                  |
-                  v
-           [ Integrator 1 ]  ----> Bandpass Output (BP)
-                  |
-                  v
-           [ Integrator 2 ]  ----> Lowpass Output (LP)
-                  |
-                  +---(Feedback Loops)---+
-```
+<img width="1919" height="894" alt="image" src="https://github.com/user-attachments/assets/4b1fd5b1-bc02-4578-8930-a9e85db4a110" />
 
 ### A. The Core Gm Cell / Integration Element
 To satisfy the 60 dB DC open-loop gain requirement while driving capacitive loads at high frequencies, a Folded Cascode OTA will be used as the Gm building block. The folded cascode structure provides the high output impedance necessary to achieve high DC voltage gain in a single stage, which keeps the phase errors in the integrator loop remarkably small.
